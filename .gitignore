@@ -1,6 +1,0 @@
-node_modules
-dist
-.offline-build
-.env
-.DS_Store
-.vercel

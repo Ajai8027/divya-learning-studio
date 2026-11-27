@@ -1,0 +1,915 @@
+{
+  "chromium": {
+    "label": "Edge/Chromium",
+    "baseUrl": "http://localhost:5173",
+    "demoUrl": "",
+    "generatedAt": "2026-11-27T11:11:20.091Z",
+    "results": [
+      {
+        "id": "T-01",
+        "area": "Layout",
+        "name": "320px no horizontal overflow",
+        "passed": true,
+        "detail": "scrollWidth=320, body=320, viewport=320"
+      },
+      {
+        "id": "T-09-320",
+        "area": "Media",
+        "name": "320px WebP artwork loaded",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": "T-08-320",
+        "area": "Navigation",
+        "name": "320px anchor targets exist",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": "T-07",
+        "area": "Navigation",
+        "name": "Edge/Chromium 320px mobile menu keyboard behaviour",
+        "passed": true,
+        "detail": "initialHidden=true, opened=true, escape=true, choice=true"
+      },
+      {
+        "id": "T-15",
+        "area": "Accessibility",
+        "name": "Edge/Chromium 320px skip link is first focus",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": "T-17-320",
+        "area": "Browsers",
+        "name": "Edge/Chromium 320px console clean",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": "T-02",
+        "area": "Layout",
+        "name": "375px no horizontal overflow",
+        "passed": true,
+        "detail": "scrollWidth=375, body=375, viewport=375"
+      },
+      {
+        "id": "T-09-375",
+        "area": "Media",
+        "name": "375px WebP artwork loaded",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": "T-08-375",
+        "area": "Navigation",
+        "name": "375px anchor targets exist",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": "T-07",
+        "area": "Navigation",
+        "name": "Edge/Chromium 375px mobile menu keyboard behaviour",
+        "passed": true,
+        "detail": "initialHidden=true, opened=true, escape=true, choice=true"
+      },
+      {
+        "id": "T-15",
+        "area": "Accessibility",
+        "name": "Edge/Chromium 375px skip link is first focus",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": "T-17-375",
+        "area": "Browsers",
+        "name": "Edge/Chromium 375px console clean",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": "T-03",
+        "area": "Layout",
+        "name": "390px no horizontal overflow",
+        "passed": true,
+        "detail": "scrollWidth=390, body=390, viewport=390"
+      },
+      {
+        "id": "T-09-390",
+        "area": "Media",
+        "name": "390px WebP artwork loaded",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": "T-08-390",
+        "area": "Navigation",
+        "name": "390px anchor targets exist",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": "T-07",
+        "area": "Navigation",
+        "name": "Edge/Chromium 390px mobile menu keyboard behaviour",
+        "passed": true,
+        "detail": "initialHidden=true, opened=true, escape=true, choice=true"
+      },
+      {
+        "id": "T-15",
+        "area": "Accessibility",
+        "name": "Edge/Chromium 390px skip link is first focus",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": "T-17-390",
+        "area": "Browsers",
+        "name": "Edge/Chromium 390px console clean",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": "T-04",
+        "area": "Layout",
+        "name": "768px no horizontal overflow",
+        "passed": true,
+        "detail": "scrollWidth=768, body=768, viewport=768"
+      },
+      {
+        "id": "T-09-768",
+        "area": "Media",
+        "name": "768px WebP artwork loaded",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": "T-08-768",
+        "area": "Navigation",
+        "name": "768px anchor targets exist",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": "T-07",
+        "area": "Navigation",
+        "name": "Edge/Chromium 768px desktop navigation",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": "T-15",
+        "area": "Accessibility",
+        "name": "Edge/Chromium 768px skip link is first focus",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": "T-17-768",
+        "area": "Browsers",
+        "name": "Edge/Chromium 768px console clean",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": "T-05",
+        "area": "Layout",
+        "name": "1200px no horizontal overflow",
+        "passed": true,
+        "detail": "scrollWidth=1200, body=1200, viewport=1200"
+      },
+      {
+        "id": "T-09-1200",
+        "area": "Media",
+        "name": "1200px WebP artwork loaded",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": "T-08-1200",
+        "area": "Navigation",
+        "name": "1200px anchor targets exist",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": "T-07",
+        "area": "Navigation",
+        "name": "Edge/Chromium 1200px desktop navigation",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": "T-15",
+        "area": "Accessibility",
+        "name": "Edge/Chromium 1200px skip link is first focus",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": "T-17-1200",
+        "area": "Browsers",
+        "name": "Edge/Chromium 1200px console clean",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": "T-06",
+        "area": "Layout",
+        "name": "1440px no horizontal overflow",
+        "passed": true,
+        "detail": "scrollWidth=1440, body=1440, viewport=1440"
+      },
+      {
+        "id": "T-09-1440",
+        "area": "Media",
+        "name": "1440px WebP artwork loaded",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": "T-08-1440",
+        "area": "Navigation",
+        "name": "1440px anchor targets exist",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": "T-07",
+        "area": "Navigation",
+        "name": "Edge/Chromium 1440px desktop navigation",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": "T-15",
+        "area": "Accessibility",
+        "name": "Edge/Chromium 1440px skip link is first focus",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": "T-17-1440",
+        "area": "Browsers",
+        "name": "Edge/Chromium 1440px console clean",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": "T-10",
+        "area": "Registration",
+        "name": "Empty fields show accessible errors",
+        "passed": true,
+        "detail": "focus=fullName"
+      },
+      {
+        "id": "T-11",
+        "area": "Registration",
+        "name": "Invalid email blocks submission",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": "T-12",
+        "area": "Registration",
+        "name": "Consent is required",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": "T-13a",
+        "area": "Registration",
+        "name": "API 422 shows clear error",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": "T-14",
+        "area": "Registration",
+        "name": "API offline shows clear error without crash",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": "T-13",
+        "area": "Registration",
+        "name": "Valid form posts to local API and confirms",
+        "passed": true,
+        "detail": ""
+      }
+    ]
+  },
+  "firefox": {
+    "label": "Firefox",
+    "baseUrl": "http://localhost:5173",
+    "demoUrl": "",
+    "generatedAt": "2026-11-27T11:12:33.737Z",
+    "results": [
+      {
+        "id": "T-01",
+        "area": "Layout",
+        "name": "320px no horizontal overflow",
+        "passed": true,
+        "detail": "scrollWidth=320, body=320, viewport=320"
+      },
+      {
+        "id": "T-09-320",
+        "area": "Media",
+        "name": "320px WebP artwork loaded",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": "T-08-320",
+        "area": "Navigation",
+        "name": "320px anchor targets exist",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": "T-07",
+        "area": "Navigation",
+        "name": "Firefox 320px mobile menu keyboard behaviour",
+        "passed": true,
+        "detail": "initialHidden=true, opened=true, escape=true, choice=true"
+      },
+      {
+        "id": "T-15",
+        "area": "Accessibility",
+        "name": "Firefox 320px skip link is first focus",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": "T-17-320",
+        "area": "Browsers",
+        "name": "Firefox 320px console clean",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": "T-02",
+        "area": "Layout",
+        "name": "375px no horizontal overflow",
+        "passed": true,
+        "detail": "scrollWidth=375, body=375, viewport=375"
+      },
+      {
+        "id": "T-09-375",
+        "area": "Media",
+        "name": "375px WebP artwork loaded",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": "T-08-375",
+        "area": "Navigation",
+        "name": "375px anchor targets exist",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": "T-07",
+        "area": "Navigation",
+        "name": "Firefox 375px mobile menu keyboard behaviour",
+        "passed": true,
+        "detail": "initialHidden=true, opened=true, escape=true, choice=true"
+      },
+      {
+        "id": "T-15",
+        "area": "Accessibility",
+        "name": "Firefox 375px skip link is first focus",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": "T-17-375",
+        "area": "Browsers",
+        "name": "Firefox 375px console clean",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": "T-03",
+        "area": "Layout",
+        "name": "390px no horizontal overflow",
+        "passed": true,
+        "detail": "scrollWidth=390, body=390, viewport=390"
+      },
+      {
+        "id": "T-09-390",
+        "area": "Media",
+        "name": "390px WebP artwork loaded",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": "T-08-390",
+        "area": "Navigation",
+        "name": "390px anchor targets exist",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": "T-07",
+        "area": "Navigation",
+        "name": "Firefox 390px mobile menu keyboard behaviour",
+        "passed": true,
+        "detail": "initialHidden=true, opened=true, escape=true, choice=true"
+      },
+      {
+        "id": "T-15",
+        "area": "Accessibility",
+        "name": "Firefox 390px skip link is first focus",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": "T-17-390",
+        "area": "Browsers",
+        "name": "Firefox 390px console clean",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": "T-04",
+        "area": "Layout",
+        "name": "768px no horizontal overflow",
+        "passed": true,
+        "detail": "scrollWidth=768, body=768, viewport=768"
+      },
+      {
+        "id": "T-09-768",
+        "area": "Media",
+        "name": "768px WebP artwork loaded",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": "T-08-768",
+        "area": "Navigation",
+        "name": "768px anchor targets exist",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": "T-07",
+        "area": "Navigation",
+        "name": "Firefox 768px desktop navigation",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": "T-15",
+        "area": "Accessibility",
+        "name": "Firefox 768px skip link is first focus",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": "T-17-768",
+        "area": "Browsers",
+        "name": "Firefox 768px console clean",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": "T-05",
+        "area": "Layout",
+        "name": "1200px no horizontal overflow",
+        "passed": true,
+        "detail": "scrollWidth=1200, body=1200, viewport=1200"
+      },
+      {
+        "id": "T-09-1200",
+        "area": "Media",
+        "name": "1200px WebP artwork loaded",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": "T-08-1200",
+        "area": "Navigation",
+        "name": "1200px anchor targets exist",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": "T-07",
+        "area": "Navigation",
+        "name": "Firefox 1200px desktop navigation",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": "T-15",
+        "area": "Accessibility",
+        "name": "Firefox 1200px skip link is first focus",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": "T-17-1200",
+        "area": "Browsers",
+        "name": "Firefox 1200px console clean",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": "T-06",
+        "area": "Layout",
+        "name": "1440px no horizontal overflow",
+        "passed": true,
+        "detail": "scrollWidth=1440, body=1440, viewport=1440"
+      },
+      {
+        "id": "T-09-1440",
+        "area": "Media",
+        "name": "1440px WebP artwork loaded",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": "T-08-1440",
+        "area": "Navigation",
+        "name": "1440px anchor targets exist",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": "T-07",
+        "area": "Navigation",
+        "name": "Firefox 1440px desktop navigation",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": "T-15",
+        "area": "Accessibility",
+        "name": "Firefox 1440px skip link is first focus",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": "T-17-1440",
+        "area": "Browsers",
+        "name": "Firefox 1440px console clean",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": "T-10",
+        "area": "Registration",
+        "name": "Empty fields show accessible errors",
+        "passed": true,
+        "detail": "focus=fullName"
+      },
+      {
+        "id": "T-11",
+        "area": "Registration",
+        "name": "Invalid email blocks submission",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": "T-12",
+        "area": "Registration",
+        "name": "Consent is required",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": "T-13a",
+        "area": "Registration",
+        "name": "API 422 shows clear error",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": "T-14",
+        "area": "Registration",
+        "name": "API offline shows clear error without crash",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": "T-13",
+        "area": "Registration",
+        "name": "Valid form posts to local API and confirms",
+        "passed": true,
+        "detail": ""
+      }
+    ]
+  },
+  "chromium-demo": {
+    "label": "Edge/Chromium",
+    "baseUrl": "http://localhost:5173",
+    "demoUrl": "http://localhost:4173",
+    "generatedAt": "2026-11-27T11:13:12.037Z",
+    "results": [
+      {
+        "id": "T-01",
+        "area": "Layout",
+        "name": "320px no horizontal overflow",
+        "passed": true,
+        "detail": "scrollWidth=320, body=320, viewport=320"
+      },
+      {
+        "id": "T-09-320",
+        "area": "Media",
+        "name": "320px WebP artwork loaded",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": "T-08-320",
+        "area": "Navigation",
+        "name": "320px anchor targets exist",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": "T-07",
+        "area": "Navigation",
+        "name": "Edge/Chromium 320px mobile menu keyboard behaviour",
+        "passed": true,
+        "detail": "initialHidden=true, opened=true, escape=true, choice=true"
+      },
+      {
+        "id": "T-15",
+        "area": "Accessibility",
+        "name": "Edge/Chromium 320px skip link is first focus",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": "T-17-320",
+        "area": "Browsers",
+        "name": "Edge/Chromium 320px console clean",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": "T-02",
+        "area": "Layout",
+        "name": "375px no horizontal overflow",
+        "passed": true,
+        "detail": "scrollWidth=375, body=375, viewport=375"
+      },
+      {
+        "id": "T-09-375",
+        "area": "Media",
+        "name": "375px WebP artwork loaded",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": "T-08-375",
+        "area": "Navigation",
+        "name": "375px anchor targets exist",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": "T-07",
+        "area": "Navigation",
+        "name": "Edge/Chromium 375px mobile menu keyboard behaviour",
+        "passed": true,
+        "detail": "initialHidden=true, opened=true, escape=true, choice=true"
+      },
+      {
+        "id": "T-15",
+        "area": "Accessibility",
+        "name": "Edge/Chromium 375px skip link is first focus",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": "T-17-375",
+        "area": "Browsers",
+        "name": "Edge/Chromium 375px console clean",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": "T-03",
+        "area": "Layout",
+        "name": "390px no horizontal overflow",
+        "passed": true,
+        "detail": "scrollWidth=390, body=390, viewport=390"
+      },
+      {
+        "id": "T-09-390",
+        "area": "Media",
+        "name": "390px WebP artwork loaded",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": "T-08-390",
+        "area": "Navigation",
+        "name": "390px anchor targets exist",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": "T-07",
+        "area": "Navigation",
+        "name": "Edge/Chromium 390px mobile menu keyboard behaviour",
+        "passed": true,
+        "detail": "initialHidden=true, opened=true, escape=true, choice=true"
+      },
+      {
+        "id": "T-15",
+        "area": "Accessibility",
+        "name": "Edge/Chromium 390px skip link is first focus",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": "T-17-390",
+        "area": "Browsers",
+        "name": "Edge/Chromium 390px console clean",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": "T-04",
+        "area": "Layout",
+        "name": "768px no horizontal overflow",
+        "passed": true,
+        "detail": "scrollWidth=768, body=768, viewport=768"
+      },
+      {
+        "id": "T-09-768",
+        "area": "Media",
+        "name": "768px WebP artwork loaded",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": "T-08-768",
+        "area": "Navigation",
+        "name": "768px anchor targets exist",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": "T-07",
+        "area": "Navigation",
+        "name": "Edge/Chromium 768px desktop navigation",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": "T-15",
+        "area": "Accessibility",
+        "name": "Edge/Chromium 768px skip link is first focus",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": "T-17-768",
+        "area": "Browsers",
+        "name": "Edge/Chromium 768px console clean",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": "T-05",
+        "area": "Layout",
+        "name": "1200px no horizontal overflow",
+        "passed": true,
+        "detail": "scrollWidth=1200, body=1200, viewport=1200"
+      },
+      {
+        "id": "T-09-1200",
+        "area": "Media",
+        "name": "1200px WebP artwork loaded",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": "T-08-1200",
+        "area": "Navigation",
+        "name": "1200px anchor targets exist",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": "T-07",
+        "area": "Navigation",
+        "name": "Edge/Chromium 1200px desktop navigation",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": "T-15",
+        "area": "Accessibility",
+        "name": "Edge/Chromium 1200px skip link is first focus",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": "T-17-1200",
+        "area": "Browsers",
+        "name": "Edge/Chromium 1200px console clean",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": "T-06",
+        "area": "Layout",
+        "name": "1440px no horizontal overflow",
+        "passed": true,
+        "detail": "scrollWidth=1440, body=1440, viewport=1440"
+      },
+      {
+        "id": "T-09-1440",
+        "area": "Media",
+        "name": "1440px WebP artwork loaded",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": "T-08-1440",
+        "area": "Navigation",
+        "name": "1440px anchor targets exist",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": "T-07",
+        "area": "Navigation",
+        "name": "Edge/Chromium 1440px desktop navigation",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": "T-15",
+        "area": "Accessibility",
+        "name": "Edge/Chromium 1440px skip link is first focus",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": "T-17-1440",
+        "area": "Browsers",
+        "name": "Edge/Chromium 1440px console clean",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": "T-10",
+        "area": "Registration",
+        "name": "Empty fields show accessible errors",
+        "passed": true,
+        "detail": "focus=fullName"
+      },
+      {
+        "id": "T-11",
+        "area": "Registration",
+        "name": "Invalid email blocks submission",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": "T-12",
+        "area": "Registration",
+        "name": "Consent is required",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": "T-13a",
+        "area": "Registration",
+        "name": "API 422 shows clear error",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": "T-14",
+        "area": "Registration",
+        "name": "API offline shows clear error without crash",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": "T-13",
+        "area": "Registration",
+        "name": "Valid form posts to local API and confirms",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "id": "T-19",
+        "area": "Registration",
+        "name": "Production demo mode does not claim submission",
+        "passed": true,
+        "detail": ""
+      }
+    ]
+  }
+}

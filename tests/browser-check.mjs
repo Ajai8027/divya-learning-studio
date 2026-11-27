@@ -5,7 +5,8 @@ import path from 'node:path';
 const baseUrl = process.env.BASE_URL || 'http://localhost:5173';
 const demoUrl = process.env.DEMO_URL || '';
 const browserName = process.env.BROWSER || 'chromium';
-const resultsFile = process.env.RESULTS_FILE || 'browser-test-results.json';
+const resultsFile = process.env.RESULTS_FILE || 'evidence/browser-results.json';
+const resultKey = process.env.RESULT_KEY || (demoUrl ? `${browserName}-demo` : browserName);
 const edgePath = process.env.EDGE_PATH
   || 'C:\\Program Files (x86)\\Microsoft\\Edge\\Application\\msedge.exe';
 const viewports = [320, 375, 390, 768, 1200, 1440];
@@ -13,6 +14,7 @@ const viewports = [320, 375, 390, 768, 1200, 1440];
 const results = [];
 const evidenceDir = path.resolve('evidence');
 await fs.mkdir(evidenceDir, { recursive: true });
+await fs.mkdir(path.dirname(resultsFile), { recursive: true });
 
 function record(id, area, name, passed, detail = '') {
   const entry = { id, area, name, passed, detail };
@@ -178,9 +180,28 @@ try {
   await browser.close();
 }
 
-await fs.writeFile(resultsFile, `${JSON.stringify(results, null, 2)}\n`, 'utf8');
+let report = {};
+try {
+  const existing = await fs.readFile(resultsFile, 'utf8');
+  const parsed = JSON.parse(existing);
+  if (parsed && typeof parsed === 'object' && !Array.isArray(parsed)) {
+    report = parsed;
+  }
+} catch {
+  report = {};
+}
+
+report[resultKey] = {
+  label,
+  baseUrl,
+  demoUrl,
+  generatedAt: new Date().toISOString(),
+  results,
+};
+
+await fs.writeFile(resultsFile, `${JSON.stringify(report, null, 2)}\n`, 'utf8');
 const failed = results.filter((entry) => !entry.passed);
-console.log(`\n${results.length - failed.length}/${results.length} checks passed. Results: ${resultsFile}`);
+console.log(`\n${results.length - failed.length}/${results.length} checks passed. Results: ${resultsFile} (${resultKey})`);
 if (failed.length > 0) {
   process.exitCode = 1;
 }

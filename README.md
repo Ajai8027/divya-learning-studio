@@ -20,7 +20,7 @@ A responsive, accessible landing page built from the supplied desktop/mobile SVG
 ```text
 .
 ├── api/                         # Supplied local registration API (standard library Python)
-├── evidence/                    # Screenshots, build/audit logs, browser result JSON
+├── evidence/                    # Screenshots, build/audit logs, consolidated browser results
 ├── public/
 │   ├── assets/
 │   │   ├── divya_logo.svg
@@ -118,7 +118,9 @@ On Windows PowerShell, set variables first, for example:
 $env:BROWSER='firefox'; npm run test:browser
 ```
 
-The automated suite covers 320, 375, 390, 768, 1200 and 1440 px widths, horizontal overflow, image loading, anchor targets, mobile-menu keyboard behaviour, skip-link focus order, all validation cases, API success, `422`, offline API and demo mode. Results are in `ACCEPTANCE_TEST_LOG.csv` and `evidence/`.
+Each browser run is stored under a key in `evidence/browser-results.json` (`chromium`, `firefox`, or `chromium-demo` by default). Set `RESULT_KEY` to use a custom key.
+
+The automated suite covers 320, 375, 390, 768, 1200 and 1440 px widths, horizontal overflow, image loading, anchor targets, mobile-menu keyboard behaviour, skip-link focus order, all validation cases, API success, `422`, offline API and demo mode. Results from all browser runs are consolidated in `evidence/browser-results.json`; the live-site smoke test is in `evidence/live-check-results.json`. The human-readable summary is `ACCEPTANCE_TEST_LOG.csv`.
 
 ## Deployment
 

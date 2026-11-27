@@ -4,10 +4,9 @@ const EMAIL_PATTERN = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 const LOCAL_HOST_PATTERN = /^https?:\/\/(localhost|127\.0\.0\.1)(:\d+)?(\/|$)/i;
 
 export class RegistrationError extends Error {
-  constructor(message, kind) {
+  constructor(message) {
     super(message);
     this.name = 'RegistrationError';
-    this.kind = kind;
   }
 }
 
@@ -25,9 +24,8 @@ export function validateRegistration(values) {
     errors.fullName = 'Name required';
   }
 
-  if (!values.email.trim()) {
-    errors.email = 'Enter a valid email address';
-  } else if (!EMAIL_PATTERN.test(values.email.trim())) {
+  const email = values.email.trim();
+  if (!email || !EMAIL_PATTERN.test(email)) {
     errors.email = 'Enter a valid email address';
   }
 
@@ -45,14 +43,15 @@ export function validateRegistration(values) {
 export function getRegistrationEndpoint() {
   const configured = import.meta.env.VITE_REGISTRATION_API_URL?.trim();
 
-  if (configured) {
-    if (import.meta.env.PROD && LOCAL_HOST_PATTERN.test(configured)) {
-      return null;
-    }
-    return configured;
+  if (!configured) {
+    return import.meta.env.DEV ? 'http://localhost:8765/api/register' : null;
   }
 
-  return import.meta.env.DEV ? 'http://localhost:8765/api/register' : null;
+  if (import.meta.env.PROD && LOCAL_HOST_PATTERN.test(configured)) {
+    return null;
+  }
+
+  return configured;
 }
 
 export async function submitRegistration(values) {
@@ -87,16 +86,12 @@ export async function submitRegistration(values) {
     }
 
     if (response.status === 422) {
-      throw new RegistrationError(
-        'Please check your details and try again.',
-        'validation',
-      );
+      throw new RegistrationError('Please check your details and try again.');
     }
 
     if (!response.ok) {
       throw new RegistrationError(
         'The registration service could not process your enquiry. Please try again later.',
-        'server',
       );
     }
 
@@ -112,12 +107,10 @@ export async function submitRegistration(values) {
     if (error.name === 'AbortError') {
       throw new RegistrationError(
         'The registration service took too long to respond. Please try again.',
-        'timeout',
       );
     }
     throw new RegistrationError(
       'We could not connect to the registration service. Please try again later.',
-      'network',
     );
   } finally {
     clearTimeout(timeoutId);

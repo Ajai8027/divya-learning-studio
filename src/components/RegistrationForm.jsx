@@ -10,6 +10,16 @@ import {
 
 const FIELD_ORDER = ['fullName', 'email', 'program', 'consent'];
 
+function getStatusClass(currentStatus) {
+  if (currentStatus === 'error') {
+    return styles.statusError;
+  }
+  if (currentStatus === 'success' || currentStatus === 'demo') {
+    return styles.statusSuccess;
+  }
+  return '';
+}
+
 export default function RegistrationForm() {
   const [values, setValues] = useState(EMPTY_VALUES);
   const [errors, setErrors] = useState({});
@@ -78,11 +88,6 @@ export default function RegistrationForm() {
   };
 
   const fieldClass = (field) => `${styles.input} ${errors[field] ? styles.inputError : ''}`;
-  const statusClass = status === 'error'
-    ? styles.statusError
-    : status === 'success' || status === 'demo'
-      ? styles.statusSuccess
-      : '';
 
   return (
     <form
@@ -196,7 +201,7 @@ export default function RegistrationForm() {
       </button>
 
       <div
-        className={`${styles.status} ${status !== 'idle' && status !== 'submitting' ? styles.statusVisible : ''} ${statusClass}`}
+        className={`${styles.status} ${status !== 'idle' && status !== 'submitting' ? styles.statusVisible : ''} ${getStatusClass(status)}`}
         role={status === 'error' ? 'alert' : 'status'}
         aria-live={status === 'error' ? 'assertive' : 'polite'}
       >

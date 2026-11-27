@@ -1,0 +1,84 @@
+.section {
+  padding-block: var(--section-space);
+}
+
+.title {
+  margin-bottom: 26px;
+  font-size: clamp(1.625rem, 5vw, 2.25rem);
+  font-weight: 800;
+}
+
+.grid {
+  display: grid;
+  gap: 16px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.card {
+  min-width: 0;
+  padding: 18px;
+  border-radius: var(--radius-lg);
+  background: var(--color-card);
+}
+
+.icon {
+  display: block;
+  width: 33px;
+  height: 33px;
+  margin-bottom: 20px;
+  border-radius: 9px;
+  background: var(--color-teal);
+}
+
+.cardTitle {
+  margin-bottom: 8px;
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.cardText {
+  margin: 0;
+  font-size: 14px;
+  line-height: 1.55;
+}
+
+@media (min-width: 768px) {
+  .grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 20px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .title {
+    margin-bottom: 32px;
+  }
+
+  .grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 26px;
+  }
+
+  .card {
+    min-height: 175px;
+    padding: 24px;
+  }
+
+  .icon {
+    width: 39px;
+    height: 39px;
+    margin-bottom: 22px;
+    border-radius: 12px;
+  }
+
+  .cardTitle {
+    margin-bottom: 12px;
+    font-size: 21px;
+  }
+
+  .cardText {
+    font-size: 15px;
+  }
+}

@@ -4,7 +4,15 @@ Live frontend preview: **https://divya-learning-studio.vercel.app**
 
 ## Overview
 
-A responsive, accessible landing page built from the supplied desktop/mobile SVG and PNG references and `CONTENT_AND_DESIGN.md`. The page includes all seven requested components, a validated registration form, local API integration, and a clearly labelled demo mode for the static deployment.
+A responsive, accessible landing page built from the supplied desktop/mobile SVG references and `CONTENT_AND_DESIGN.md`. It includes all seven requested components, a validated registration form, local API integration, a clearly labelled demo mode, and a **self-contained offline build** that opens directly from `index.html` with no internet connection.
+
+## Quick start — offline version
+
+Double-click **`index.html`** in this folder (or open `file:///.../index.html` in any modern browser). That single file contains the complete page: React bundle, all CSS, the SVG logo/favicon, and the WebP illustration are inlined as data URIs. No server, installation, or network access is required.
+
+The offline form keeps full validation. Because there is no backend, submitting it shows: “Validation passed. This preview is in demo mode, so your enquiry was not transmitted.” It never claims a successful submission.
+
+> `index.html` is generated output. To change the design, edit `index.dev.html` and `src/`, then run `npm run build:offline`.
 
 ## Technology stack
 
@@ -19,13 +27,15 @@ A responsive, accessible landing page built from the supplied desktop/mobile SVG
 
 ```text
 .
-├── api/                         # Supplied local registration API (standard library Python)
-├── evidence/                    # Screenshots, build/audit logs, consolidated browser results
+├── api/                         # Supplied local registration API (Python stdlib)
+├── evidence/                    # Screenshots, build/audit logs, browser result JSON
 ├── public/
 │   ├── assets/
 │   │   ├── divya_logo.svg
 │   │   └── learning_dashboard_illustration.webp
 │   └── favicon.svg
+├── scripts/
+│   └── build-offline.mjs        # Builds self-contained root index.html
 ├── src/
 │   ├── components/
 │   │   ├── Benefits.jsx / .module.css
@@ -43,13 +53,22 @@ A responsive, accessible landing page built from the supplied desktop/mobile SVG
 │   └── main.jsx
 ├── tests/
 │   ├── browser-check.mjs        # Six-viewport layout/navigation/form suite
-│   └── live-check.mjs           # Live Vercel preview smoke test
+│   ├── live-check.mjs           # Live Vercel preview smoke test
+│   └── offline-check.mjs        # file:// offline suite (Edge + Firefox)
+├── .env.example
+├── .gitignore
 ├── ACCEPTANCE_TEST_LOG.csv
 ├── COMPLETION_NOTE.md
+├── index.dev.html               # Vite development entry
+├── index.html                   # GENERATED self-contained offline page
+├── package-lock.json
+├── package.json
+├── vite.config.js               # Development/production config
+├── vite.offline.config.js       # Offline single-file config
 └── README.md
 ```
 
-## Local setup
+## Local development
 
 Requirements: Node.js 18+, npm, and Python 3.9+ for the optional local API.
 
@@ -58,7 +77,17 @@ npm install
 npm run dev
 ```
 
-Open `http://localhost:5173`. The development server defaults to the local registration endpoint even if `.env` is absent. To make the endpoint explicit, copy `.env.example` to `.env`.
+Open `http://localhost:5173`. The development server serves `index.dev.html` and defaults to the local registration endpoint even if `.env` is absent. To make the endpoint explicit, copy `.env.example` to `.env`.
+
+### Rebuild the offline page
+
+```bash
+npm run build:offline   # regenerates root index.html (~180 KB, zero external requests)
+npm run build           # normal Vite build to dist/ for hosting
+npm run build:all       # both builds
+```
+
+`npm run build:offline` uses `vite.offline.config.js` with a relative base and IIFE output, inlines CSS and JavaScript, embeds all assets as data URIs, removes preload links, and moves the bundle to the end of `<body>` so it works from `file://`. It fails the build if any external script, stylesheet, image, or asset path remains.
 
 ### Local registration API
 
@@ -83,8 +112,7 @@ Content-Type: application/json
 }
 ```
 
-Success: `201` with `{ "status": "received", "request_id": "REQ-..." }`.
-Invalid input: `422`. The supplied server only emits CORS headers for `http://localhost:5173`, so it is a development-only backend.
+Success: `201` with `{ "status": "received", "request_id": "REQ-..." }`. Invalid input: `422`. The supplied server only emits CORS headers for `http://localhost:5173`, so it is a development-only backend.
 
 ## Form behaviour
 
@@ -93,15 +121,17 @@ Invalid input: `422`. The supplied server only emits CORS headers for `http://lo
 - Loading state disables controls and exposes `aria-busy`.
 - `422`, server, timeout and network failures produce distinct messages.
 - The exact success message is shown **only** after a real `201`.
-- On a static production build without a configured reachable API, the form validates locally and displays: “Validation passed. This preview is in demo mode, so your enquiry was not transmitted.” It never claims a successful submission.
+- On static production builds and in the offline file, the form validates locally and displays: “Validation passed. This preview is in demo mode, so your enquiry was not transmitted.” It never claims a successful submission.
 
 To connect a real deployed backend, set `VITE_REGISTRATION_API_URL` to an HTTPS endpoint at build time and update that backend's CORS policy. No credentials or secrets are stored in the repository.
 
 ## Testing
 
 ```bash
-npm run build                 # Production build
+npm run build                 # Production build to dist/
+npm run build:offline         # Self-contained index.html
 npm run test:browser          # Edge/Chromium suite against http://localhost:5173
+npm run test:offline          # file:// suite in Edge and Firefox
 ```
 
 For Firefox (installed once with `npx playwright-core install firefox`):
@@ -120,11 +150,11 @@ $env:BROWSER='firefox'; npm run test:browser
 
 Each browser run is stored under a key in `evidence/browser-results.json` (`chromium`, `firefox`, or `chromium-demo` by default). Set `RESULT_KEY` to use a custom key.
 
-The automated suite covers 320, 375, 390, 768, 1200 and 1440 px widths, horizontal overflow, image loading, anchor targets, mobile-menu keyboard behaviour, skip-link focus order, all validation cases, API success, `422`, offline API and demo mode. Results from all browser runs are consolidated in `evidence/browser-results.json`; the live-site smoke test is in `evidence/live-check-results.json`. The human-readable summary is `ACCEPTANCE_TEST_LOG.csv`.
+The suites cover 320, 375, 390, 768, 1200 and 1440 px widths, horizontal overflow, image loading, anchor targets, mobile-menu keyboard behaviour, skip-link focus order, all validation cases, API success, `422`, offline API, demo mode, and — for the local file — zero network requests. Results are in `evidence/browser-results.json`, `evidence/offline-check-results.json`, and `evidence/live-check-results.json`. The human-readable summary is `ACCEPTANCE_TEST_LOG.csv`.
 
 ## Deployment
 
-Vercel auto-detects Vite (`vite build`, output `dist`). The live URL above serves the static frontend only. Because the supplied API is local-only, the live preview operates in demo mode until a production backend is independently deployed and configured.
+Vercel auto-detects Vite (`vite build`, output `dist`, entry renamed to `index.html`). The live URL serves the static frontend only. Because the supplied API is local-only, the live preview operates in demo mode until a production backend is independently deployed and configured. The offline `index.html` is committed separately and is not used by the Vercel build.
 
 ## Notes
 

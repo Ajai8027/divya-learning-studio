@@ -6,8 +6,11 @@
   "scripts": {
     "dev": "vite",
     "build": "vite build",
+    "build:offline": "node scripts/build-offline.mjs",
+    "build:all": "npm run build && npm run build:offline",
     "preview": "vite preview",
-    "test:browser": "node tests/browser-check.mjs"
+    "test:browser": "node tests/browser-check.mjs",
+    "test:offline": "node tests/offline-check.mjs"
   },
   "dependencies": {
     "react": "^18.3.1",

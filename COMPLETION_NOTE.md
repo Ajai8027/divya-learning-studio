@@ -11,6 +11,8 @@
 - Used the supplied SVG logo and optimized WebP illustration.
 - Verified the production build and ran genuine automated browser tests in Microsoft Edge/Chromium and Firefox at 320, 375, 390, 768, 1200 and 1440 px.
 - Deployed the static frontend to Vercel and verified the live URL in a browser.
+- Added a self-contained offline build: the root `index.html` opens directly from `file://` with React, CSS, logo, favicon and WebP artwork inlined, requiring no server or internet connection.
+- Verified the offline file in Edge/Chromium and Firefox at all six viewports with zero network requests and correct demo-mode form behaviour (52/52 checks).
 
 ## Originality statement
 
